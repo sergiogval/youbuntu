@@ -1,0 +1,14 @@
+[Unit]
+Description=Mount unit for brave, revision 153
+Before=snapd.service
+After=zfs-mount.service
+
+[Mount]
+What=/var/lib/snapd/snaps/brave_153.snap
+Where=/snap/brave/153
+Type=squashfs
+Options=nodev,ro,x-gdu.hide,x-gvfs-hide
+LazyUnmount=yes
+
+[Install]
+WantedBy=multi-user.target

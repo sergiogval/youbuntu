@@ -1,0 +1,14 @@
+[Unit]
+Description=Mount unit for snapd-desktop-integration, revision 10
+Before=snapd.service
+After=zfs-mount.service
+
+[Mount]
+What=/var/lib/snapd/snaps/snapd-desktop-integration_10.snap
+Where=/snap/snapd-desktop-integration/10
+Type=squashfs
+Options=nodev,ro,x-gdu.hide,x-gvfs-hide
+LazyUnmount=yes
+
+[Install]
+WantedBy=multi-user.target

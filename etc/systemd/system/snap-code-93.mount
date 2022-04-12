@@ -1,0 +1,14 @@
+[Unit]
+Description=Mount unit for code, revision 93
+Before=snapd.service
+After=zfs-mount.service
+
+[Mount]
+What=/var/lib/snapd/snaps/code_93.snap
+Where=/snap/code/93
+Type=squashfs
+Options=nodev,ro,x-gdu.hide,x-gvfs-hide
+LazyUnmount=yes
+
+[Install]
+WantedBy=multi-user.target
